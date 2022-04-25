@@ -2,13 +2,11 @@ FLAG : x24ti5gi3x0ol2eh4esiuxias
 
 scp -P 4242 level01@127.0.0.1:/etc/passwd .
 
-john passwd
+john --show passwd
+~/42/john-1.9.0/run/john --show passwd
 ```
-    Loaded 1 password hash (descrypt, traditional crypt(3) [DES 128/128 SSE2])
-    Press 'q' or Ctrl-C to abort, almost any other key for status
-    abcdefg          (flag01)
-    1g 0:00:00:00 100% 2/3 100.0g/s 150600p/s 150600c/s 150600C/s raquel..bigman
-    Use the "--show" option to display all of the cracked passwords reliably
-    Session completed
+flag01:abcdefg:3001:3001::/home/flag/flag01:/bin/bash
+
+1 password hash cracked, 0 left
 ```
 
