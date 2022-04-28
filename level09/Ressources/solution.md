@@ -1,10 +1,20 @@
 ## FLAG: `25749xKZ8L7DkSCwJkT9dyv6f`
 
+## We have an executable and a token
+> ls -l
+```
+    total 12
+    -rwsr-sr-x 1 flag09 level09 7640 Mar  5  2016 level09
+    ----r--r-- 1 flag09 level09   26 Mar  5  2016 token
+```
+
+## The token is accessible, What does he have ?
 > cat token
 ```
     f4kmm6p|=�p�n��DB�Du{��
 ```
 
+## Testing the program
 > ./level09 token
 ```
     tpmhr
@@ -17,10 +27,11 @@
 ```
     acegikm
 ```
-
 ## This program takes a string and add its index to each char
 ## `token` content must be the real token taken trough this program
 ## We'll create a script which does the opposite
+
+------------------------------------------------
 
 > vi /tmp/09_reverse.py
 ```
@@ -40,6 +51,8 @@ print("\n")
 ```
     f3iji1ju5yuevaus41q1afiuq
 ```
+
+------------------------------------------------
 
 > su flag09
 > getflag

